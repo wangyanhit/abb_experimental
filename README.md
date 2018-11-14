@@ -23,8 +23,8 @@ sudo apt install ros-kinetic-industrial-core ros-kinetic-moveit
 ```
 Now build the abb_experimental package:
 ```
-mkdir -p abb_experimental_ws/src
-cd abb_experimental_ws/src
+mkdir -p (your ROS workspace)/src
+cd (your ROS workspace)/src
 git clone -b kinetic-devel https://github.com/wangyanhit/abb_experimental.git
 wstool init .
 wstool merge abb_experimental/abb_experimental.rosinstall
