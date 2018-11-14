@@ -61,6 +61,42 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <transmission name="${prefix}tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}joint_7">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor7">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}joint_8">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor8">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran9">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}joint_9">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor9">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}trana">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}joint_a">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motora">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!-- end of transmission list -->
 
   <!-- Gazebo-specific link properties -->

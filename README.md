@@ -29,7 +29,9 @@ git clone -b kinetic-devel git@github.com:ros-industrial/abb_experimental.git
 wstool init .
 wstool merge abb_experimental/abb_experimental.rosinstall
 wstool update
-catkin build
+cd ..
+catkin_make
+% catkin build
 ```
 
 [ROS-Industrial]: http://wiki.ros.org/Industrial
