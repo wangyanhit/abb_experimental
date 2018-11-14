@@ -25,7 +25,7 @@ Now build the abb_experimental package:
 ```
 mkdir -p abb_experimental_ws/src
 cd abb_experimental_ws/src
-git clone -b kinetic-devel git@github.com:ros-industrial/abb_experimental.git
+git clone -b kinetic-devel https://github.com/wangyanhit/abb_experimental.git
 wstool init .
 wstool merge abb_experimental/abb_experimental.rosinstall
 wstool update
