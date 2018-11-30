@@ -163,14 +163,14 @@
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
         <geometry>
           <mesh filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL"/>
         </geometry>
         <xacro:material_abb_black />
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
         <geometry>
           <mesh filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL"/>
         </geometry>
@@ -181,11 +181,11 @@
     <link name="${prefix}link_8">
       <inertial>
         <mass value="0.137"/>
-        <origin xyz="-1.1311E-08 -7.4559E-09 -0.0058234" rpy="0 0 3.14159"/>
+        <origin xyz="-1.1311E-08 -7.4559E-09 -0.0058234" rpy="0 0 3.1415926"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
         <geometry>
           <mesh filename="package://dvrk_model/PSM/meshes/tool_roll_link.STL"/>
         </geometry>
@@ -203,18 +203,18 @@
     <link name="${prefix}link_9">
       <inertial>
         <mass value="0.137"/>
-        <origin xyz="0.0035766 -4.8675E-05 4.4413E-06" rpy="0 0 3.14159"/>
+        <origin xyz="0.0035766 -4.8675E-05 4.4413E-06" rpy="0 0 3.1415926"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
         <geometry>
           <mesh filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL"/>
         </geometry>
         <xacro:material_abb_black />
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
         <geometry>
           <mesh filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL"/>
         </geometry>
@@ -326,7 +326,7 @@
     <joint name="${prefix}joint6-insertion" type="fixed">
       <parent link="${prefix}link_6"/>
       <child link="${prefix}link_7"/>
-      <origin xyz="0.1 0 0" rpy="3.1415926 0 0" />
+      <origin xyz="0.1 0 0.1" rpy="3.1415926 -1.5707963267949 0" />
     </joint>
     <joint name="${prefix}joint_7" type="revolute">
       <parent link="${prefix}link_7"/>
