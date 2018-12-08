@@ -6,7 +6,7 @@
 
     <link name="${prefix}link_7">
       <inertial>
-        <mass value="0.137"/>
+        <mass value="0.150"/>
         <origin xyz="0.0040563 -0.00010934 0.010292" rpy="0 0 0"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
@@ -28,7 +28,7 @@
 
     <link name="${prefix}link_8">
       <inertial>
-        <mass value="0.137"/>
+        <mass value="0.005"/>
         <origin xyz="-1.1311E-08 -7.4559E-09 -0.0058234" rpy="0 0 3.1415926"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
@@ -50,7 +50,7 @@
 
     <link name="${prefix}link_9">
       <inertial>
-        <mass value="0.137"/>
+        <mass value="0.005"/>
         <origin xyz="0.0035766 -4.8675E-05 4.4413E-06" rpy="0 0 3.1415926"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
@@ -72,7 +72,7 @@
 
     <link name="${prefix}link_10">
       <inertial>
-        <mass value="0.137"/>
+        <mass value="0.005"/>
         <origin xyz="0.00018874 0.0013526 -0.00091695" rpy="0 0 0" />
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
@@ -93,7 +93,7 @@
     </link>
     <link name="${prefix}link_11">
       <inertial>
-        <mass value="0.137"/>
+        <mass value="0.005"/>
         <origin xyz="0.00018874 0.0013526 -0.00091695" rpy="0 0 0" />
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>s
