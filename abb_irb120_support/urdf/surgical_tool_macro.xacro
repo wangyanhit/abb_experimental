@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="surgical_tool" params="prefix">
+
+    <!-- surgical link list -->
+
+    <link name="${prefix}link_7">
+      <inertial>
+        <mass value="0.137"/>
+        <origin xyz="0.0040563 -0.00010934 0.010292" rpy="0 0 0"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+
+    <link name="${prefix}link_8">
+      <inertial>
+        <mass value="0.137"/>
+        <origin xyz="-1.1311E-08 -7.4559E-09 -0.0058234" rpy="0 0 3.1415926"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_roll_link.STL"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_roll_link.STL"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+
+    <link name="${prefix}link_9">
+      <inertial>
+        <mass value="0.137"/>
+        <origin xyz="0.0035766 -4.8675E-05 4.4413E-06" rpy="0 0 3.1415926"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 3.1415926"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+
+    <link name="${prefix}link_10">
+      <inertial>
+        <mass value="0.137"/>
+        <origin xyz="0.00018874 0.0013526 -0.00091695" rpy="0 0 0" />
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_gripper1_link.STL"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_gripper1_link.STL"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_11">
+      <inertial>
+        <mass value="0.137"/>
+        <origin xyz="0.00018874 0.0013526 -0.00091695" rpy="0 0 0" />
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>s
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_gripper2_link.STL"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/PSM/meshes/tool_gripper2_link.STL"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+
+    <!-- end of surgical link list -->
+  </xacro:macro>
+
+  <xacro:macro name="surgical_tool_joints" params="prefix parent">
+    <joint name="${prefix}mount3-tool1" type="fixed">
+      <parent link="${prefix}${parent}"/>
+      <child link="${prefix}link_7"/>
+      <origin xyz="0.045 0 0.01" rpy="0 0 0" />
+    </joint>
+    <joint name="${prefix}joint_7" type="revolute">
+      <parent link="${prefix}link_7"/>
+      <child link="${prefix}link_8"/>
+      <origin xyz="0 0 0.416199999999902" rpy="0 0 0" />
+      <limit effort="0" lower="-3.1415" upper="3.1415" velocity="7.33038"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_8" type="revolute">
+      <parent link="${prefix}link_8"/>
+      <child link="${prefix}link_9"/>
+      <origin rpy="1.5707963267949 1.5707963267949 0" xyz="0 0 0"/>
+      <limit effort="0" lower="-1.57" upper="1.57" velocity="7.33038"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_9" type="revolute">
+      <parent link="${prefix}link_9"/>
+      <child link="${prefix}link_10"/>
+      <origin rpy="1.5707963267949 1.5707963267949 3.1415926 " xyz="-0.0091 0 0"/>
+      <limit effort="0" lower="-1.57" upper="1.57" velocity="7.33038"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_a" type="revolute">
+      <parent link="${prefix}link_9"/>
+      <child link="${prefix}link_11"/>
+      <origin rpy="1.5707963267949 1.5707963267949 3.1415926 " xyz="-0.0091 0 0"/>
+      <limit effort="0" lower="-1.57" upper="1.57" velocity="7.33038"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+  </xacro:macro>
+
+</robot>
