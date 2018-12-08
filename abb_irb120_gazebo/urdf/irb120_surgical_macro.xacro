@@ -5,7 +5,7 @@
 
   <!-- get base ABB IRB120 model -->
   <xacro:abb_irb120_surgical prefix="${prefix}" />
-
+  
   <!-- transmission list -->
   <transmission name="${prefix}tran1">
     <type>transmission_interface/SimpleTransmission</type>
@@ -127,6 +127,74 @@
   <gazebo reference="${prefix}link_6">
     <material>Gazebo/Black</material>
     <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  
+
+  <!-- change the color of different links of the robot -->
+  <gazebo reference="${prefix}mount_1">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="${prefix}mount_2">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="${prefix}mount_3">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="${prefix}plate_1">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/RedTransparentOverlay</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="${prefix}plate_2">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Green</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+
+  <gazebo reference="${prefix}link_7">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Black</name>
+        </script>
+      </material>
+    </visual>
   </gazebo>
 
   <!-- ros_control plugin -->

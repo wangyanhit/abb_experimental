@@ -326,7 +326,7 @@
     <joint name="${prefix}joint6-insertion" type="fixed">
       <parent link="${prefix}link_6"/>
       <child link="${prefix}link_7"/>
-      <origin xyz="0.1 0 0.1" rpy="3.1415926 -1.5707963267949 0" />
+      <origin xyz="0.051 0 0.1" rpy="3.1415926 -1.5707963267949 0" />
     </joint>
     <joint name="${prefix}joint_7" type="revolute">
       <parent link="${prefix}link_7"/>
