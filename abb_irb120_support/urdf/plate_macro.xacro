@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="plate" params="prefix size hole">
+
+    <link name="${prefix}plate_1">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${size}"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0 0 0.8 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <link name="${prefix}plate_2">
+      <inertial>
+        <mass value="0.050"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.003" radius="${hole}"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0 0 0.8 1"/>
+        </material>
+      </visual>
+    </link>
+  </xacro:macro>
+
+
+  <xacro:macro name="plate_joints" params="prefix parent origin_xyz origin_rpy">
+  	<joint name="${prefix}plate-base" type="fixed">
+      <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+      <parent link="${prefix}${parent}"/>
+      <child link="${prefix}plate_1"/>
+    </joint>
+
+    <joint name="${prefix}plate1-plate2" type="fixed">
+      <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+      <parent link="${prefix}plate_1"/>
+      <child link="${prefix}plate_2"/>
+    </joint>
+  </xacro:macro>
+</robot>

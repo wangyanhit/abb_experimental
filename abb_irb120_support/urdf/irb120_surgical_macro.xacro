@@ -1,12 +1,31 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- include all the dependent xacros -->
   <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
   <xacro:include filename="$(find abb_irb120_support)/urdf/mount_macro.xacro"/>
   <xacro:include filename="$(find abb_irb120_support)/urdf/surgical_tool_macro.xacro"/>
+  <xacro:include filename="$(find abb_irb120_support)/urdf/plate_macro.xacro"/>
+  
+  <!-- give parameters to the dependent xacros -->
+  <!-- prefix = name of your robot -->
+  <!-- parent = parent link of the part "the link where the part will be attached" -->
   <xacro:mount prefix=""/>
   <xacro:mount_joints prefix="" parent="tool0"/>
   <xacro:surgical_tool prefix=""/>
   <xacro:surgical_tool_joints prefix="" parent="mount_3"/>
+  
+  <!-- plate = imaginary area to show RCM movement -->
+  <!-- dimensions of the plate -->
+  <!-- size = dimensions of the plate -->
+  <!-- hole = radius of the hole in plate -->
+  <xacro:plate prefix="" size="0.1 0.1 0.001" hole="0.02"/>
+  
+  <!-- plate_joints = where the plate is attached wrt to the Robot -->
+  <!-- we attach it to main base_link which is fixed -->
+  <!-- origin_xyz = change the position of the center of plate -->
+  <!-- origin_rpy = change the orientation of the plate -->
+  <xacro:plate_joints prefix="" parent="base_link" origin_xyz="0.4 0 0.35" origin_rpy="0 0 0"/>
+
   
   <xacro:macro name="abb_irb120_surgical" params="prefix">
     <!-- link list -->
