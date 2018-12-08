@@ -24,7 +24,7 @@
   <!-- we attach it to main base_link which is fixed -->
   <!-- origin_xyz = change the position of the center of plate -->
   <!-- origin_rpy = change the orientation of the plate -->
-  <xacro:plate_joints prefix="" parent="base_link" origin_xyz="0.4 0 0.35" origin_rpy="0 0 0"/>
+  <xacro:plate_joints prefix="" parent="base_link" origin_xyz="0.402 0 0.405" origin_rpy="0 0 0"/>
 
   
   <xacro:macro name="abb_irb120_surgical" params="prefix">
